@@ -1,0 +1,10 @@
+appname = "task-rebot"
+Host = "0.0.0.0"
+Port = 8888
+[mysql]
+host = "118.25.23.154"
+password = "123456"
+port = 8086
+tableprefix = ""
+user = "root"
+dbname = "taskrebot"

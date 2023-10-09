@@ -10,5 +10,5 @@ type Service struct {
 }
 
 func (r *Service) TableName() string {
-	return "Services"
+	return "services"
 }

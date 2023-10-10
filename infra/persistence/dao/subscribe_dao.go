@@ -22,7 +22,7 @@ type SubscribeDaoInGorm struct {
 	db *gorm.DB
 }
 
-func ProviderSubscribeDaoInGorm(d *gorm.DB) *SubscribeDaoInGorm {
+func NewSubscribeDaoInGorm(d *gorm.DB) *SubscribeDaoInGorm {
 	return &SubscribeDaoInGorm{
 		db: d,
 	}

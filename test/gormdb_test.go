@@ -24,7 +24,7 @@ func TestAutoDb(t *testing.T) {
 }
 
 func TestServiceDao(t *testing.T) {
-	s := dao.ProviderServiceDaoInForm(ingorm.ProviderOnceGormDB())
+	s := dao.NewServiceDaoInForm(ingorm.ProviderOnceGormDB())
 
 	ctx := context.Background()
 	service, _ := s.FindAllService(ctx)
@@ -34,7 +34,7 @@ func TestServiceDao(t *testing.T) {
 }
 
 func TestCreateService(t *testing.T) {
-	s := dao.ProviderServiceDaoInForm(ingorm.ProviderOnceGormDB())
+	s := dao.NewServiceDaoInForm(ingorm.ProviderOnceGormDB())
 	ctx := context.Background()
 	for i := 0; i < 10; i++ {
 		p := &po.Service{
@@ -54,7 +54,7 @@ func TestCreateService(t *testing.T) {
 // Users
 
 func TestCreateUser(t *testing.T) {
-	u := dao.ProviderUserDaoInGorm(ingorm.ProviderOnceGormDB())
+	u := dao.NewUserDaoInGorm(ingorm.ProviderOnceGormDB())
 	ctx := context.Background()
 	for i := 0; i < 10; i++ {
 		p := &po.User{
@@ -69,7 +69,7 @@ func TestCreateUser(t *testing.T) {
 	}
 }
 func TestFindNewId(t *testing.T) {
-	u := dao.ProviderUserDaoInGorm(ingorm.ProviderOnceGormDB())
+	u := dao.NewUserDaoInGorm(ingorm.ProviderOnceGormDB())
 	ctx := context.Background()
 	id, err := u.FindNewId(ctx)
 	if err != nil {
@@ -83,7 +83,7 @@ func TestFindNewId(t *testing.T) {
 // tasks
 
 func TestCreateTask(t *testing.T) {
-	taskDao := dao.ProviderTaskDao(ingorm.ProviderOnceGormDB())
+	taskDao := dao.NewTaskDao(ingorm.ProviderOnceGormDB())
 	ctx := context.Background()
 	for i := 0; i < 10; i++ {
 		t := &po.Task{
@@ -104,7 +104,7 @@ func TestCreateTask(t *testing.T) {
 // subscribes
 
 func TestCreateSubscribe(t *testing.T) {
-	s := dao.ProviderSubscribeDaoInGorm(ingorm.ProviderOnceGormDB())
+	s := dao.NewSubscribeDaoInGorm(ingorm.ProviderOnceGormDB())
 	ctx := context.Background()
 	for i := 0; i < 10; i++ {
 		su := &po.Subscribe{
@@ -120,7 +120,7 @@ func TestCreateSubscribe(t *testing.T) {
 }
 
 func TestGetSubscribeByServiceId(t *testing.T) {
-	s := dao.ProviderSubscribeDaoInGorm(ingorm.ProviderOnceGormDB())
+	s := dao.NewSubscribeDaoInGorm(ingorm.ProviderOnceGormDB())
 	ctx := context.Background()
 	seid := 0
 	auids, err := s.GetSubscribeByServiceId(ctx, seid)

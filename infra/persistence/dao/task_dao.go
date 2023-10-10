@@ -29,13 +29,20 @@ type TaskDao interface {
 	FindAllDueTaskPersonal(ctx context.Context, auid string) ([]*po.Task, error)
 	//		查询出所有未完成任务
 	FindFinishDueTaskPersonal(ctx context.Context, auid string) ([]*po.Task, error)
+
+	//	 按照状态查询出今天的个人任务
+	FindDueTaskByStatusPersonal(ctx context.Context, auid string, status int) ([]*po.Task, error)
+	//	 按照状态查询今天的所有任务
+	FindDueTaskByStatus(ctx context.Context, status int) ([]*po.Task, error)
+	//	 按照状态查询所有个人任务
+	FindTasksByStatusPersonal(ctx context.Context, auid string, status int) ([]*po.Task, error)
 }
 
 type TaskDaoInGorm struct {
 	db *gorm.DB
 }
 
-func ProviderTaskDao(db *gorm.DB) *TaskDaoInGorm {
+func NewTaskDao(db *gorm.DB) *TaskDaoInGorm {
 	return &TaskDaoInGorm{
 		db: db,
 	}
@@ -140,4 +147,34 @@ func (t *TaskDaoInGorm) FindFinishDueTaskPersonal(ctx context.Context, auid stri
 		return nil, err
 	}
 	return tasks, nil
+}
+
+// 按照状态查询出今天的个人任务
+func (t *TaskDaoInGorm) FindDueTaskByStatusPersonal(ctx context.Context, auid string, status int) (aim []*po.Task, err error) {
+	err = t.db.Model(&po.Task{}).Where("to_days(duedate) = to_days(now()) and auid = ? and status = ?", auid, status).Find(&aim).Error
+	if err != nil {
+		log.Errorf("Failed to find task in db: %v", err)
+		return nil, err
+	}
+	return aim, nil
+}
+
+// 按照状态查询今天的所有任务
+func (t *TaskDaoInGorm) FindDueTaskByStatus(ctx context.Context, status int) (aim []*po.Task, err error) {
+	err = t.db.Model(&po.Task{}).Where("status = ?", status).Find(&aim).Error
+	if err != nil {
+		log.Errorf(" could not find task in database  for status %v", err)
+		return nil, err
+	}
+	return aim, nil
+}
+
+// 按照状态查询所有个人任务
+func (t *TaskDaoInGorm) FindTasksByStatusPersonal(ctx context.Context, auid string, status int) (aim []*po.Task, err error) {
+	err = t.db.Model(&po.Task{}).Where("auid=?", auid).Find(&aim).Error
+	if err != nil {
+		log.Errorf("Error while querying Personal Tasks: %v", err)
+		return nil, err
+	}
+	return aim, nil
 }

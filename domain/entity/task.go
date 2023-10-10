@@ -1,6 +1,7 @@
 package entity
 
 import (
+	"github.com/peifengll/task-rebot/domain/repository"
 	"time"
 )
 
@@ -12,3 +13,10 @@ type Task struct {
 	DueDate     time.Time `gorm:"column:duedate"`     //截至日期
 	Status      int       `gorm:"column:status"`      // 情况，0没弄，1完成，2失败超时
 }
+
+type TaskAgg struct {
+	*Task
+	Repo repository.TaskRepo
+}
+
+// 任务管理者

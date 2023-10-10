@@ -25,7 +25,7 @@ type ServiceDao interface {
 	DeleteService(ctx context.Context, id int) error
 }
 
-func ProviderServiceDaoInForm(d *gorm.DB) *ServiceDaoInForm {
+func NewServiceDaoInForm(d *gorm.DB) *ServiceDaoInForm {
 	return &ServiceDaoInForm{
 		db: d,
 	}

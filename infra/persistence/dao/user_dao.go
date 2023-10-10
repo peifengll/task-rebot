@@ -19,7 +19,7 @@ type UserDaoInGorm struct {
 	db *gorm.DB
 }
 
-func ProviderUserDaoInGorm(d *gorm.DB) *UserDaoInGorm {
+func NewUserDaoInGorm(d *gorm.DB) *UserDaoInGorm {
 	return &UserDaoInGorm{
 		db: d,
 	}
@@ -40,8 +40,8 @@ func (u *UserDaoInGorm) FindNewId(ctx context.Context) (int, error) {
 	err := row.Scan(&id)
 	if err != nil {
 		log.Errorf("Error: %s", err)
-		return 0, err
+		return -1, err
 	}
-	return id, nil
+	return id + 1, nil
 
 }

@@ -1,7 +1,6 @@
-package entity
+package task
 
 import (
-	"github.com/peifengll/task-rebot/domain/repository"
 	"time"
 )
 
@@ -16,7 +15,7 @@ type Task struct {
 
 type TaskAgg struct {
 	*Task
-	Repo repository.TaskRepo
+	Repo TaskRepo
 }
 
 // 任务管理者

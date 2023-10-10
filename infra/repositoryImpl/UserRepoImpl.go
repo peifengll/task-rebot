@@ -3,8 +3,7 @@ package repositoryImpl
 import (
 	"context"
 	log "github.com/cihub/seelog"
-	"github.com/peifengll/task-rebot/domain/entity"
-	"github.com/peifengll/task-rebot/domain/repository"
+	"github.com/peifengll/task-rebot/domain/user"
 	"github.com/peifengll/task-rebot/infra/converter"
 	"github.com/peifengll/task-rebot/infra/persistence/dao"
 )
@@ -14,16 +13,16 @@ type UserRepoImpl struct {
 	Convert converter.UserConverter
 }
 
-var _ repository.UserRepo = &UserRepoImpl{}
+var _ user.UserRepo = &UserRepoImpl{}
 
-func NewUserRepo(dao dao.UserDao, convert converter.UserConverter) repository.UserRepo {
+func NewUserRepo(dao dao.UserDao, convert converter.UserConverter) user.UserRepo {
 	return &UserRepoImpl{
 		Dao:     dao,
 		Convert: convert,
 	}
 }
 
-func (u *UserRepoImpl) SaveUser(ctx context.Context, user *entity.User) error {
+func (u *UserRepoImpl) SaveUser(ctx context.Context, user *user.User) error {
 	return u.Dao.CreateUser(ctx, u.Convert.ToPoUser(user))
 }
 

@@ -1,6 +1,4 @@
-package entity
-
-import "github.com/peifengll/task-rebot/domain/repository"
+package subscribe
 
 // 订阅服务
 // 用户与服务的对应关系
@@ -12,5 +10,5 @@ type Subscribe struct {
 
 type SubscribeAgg struct {
 	*Subscribe
-	Repo repository.SubscribeRepo
+	Repo SubscribeRepo
 }

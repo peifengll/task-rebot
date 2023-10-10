@@ -1,4 +1,4 @@
-package ServiceCode
+package service
 
 import (
 	"context"

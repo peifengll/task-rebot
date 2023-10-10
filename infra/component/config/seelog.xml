@@ -10,8 +10,8 @@
         <filter levels="error,critical">
             <console formatid="colored-error"/>
 
-            <!--            <smtp formatid="criticalemail" senderaddress="noreply-notification-service@none.org"-->
-            <!--                  sendername="Automatic notification service" hostname="mail.none.org" hostport="587" username="nns"-->
+            <!--            <smtp formatid="criticalemail" senderaddress="noreply-notification-domain_service@none.org"-->
+            <!--                  sendername="Automatic notification domain_service" hostname="mail.none.org" hostport="587" username="nns"-->
             <!--                  password="123">-->
             <!--                <recipient address="peifengll@qq.com"/>-->
             <!--            </smtp>-->

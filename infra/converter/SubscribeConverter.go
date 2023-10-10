@@ -1,16 +1,16 @@
 package converter
 
 import (
-	"github.com/peifengll/task-rebot/domain/entity"
+	"github.com/peifengll/task-rebot/domain/subscribe"
 	"github.com/peifengll/task-rebot/infra/persistence/po"
 	"gorm.io/gorm"
 )
 
 type SubscribeConverter interface {
-	ToEntitySubscribe(subscribe *po.Subscribe) *entity.Subscribe
-	ToEntitySubscribes(subscribes []*po.Subscribe) []*entity.Subscribe
-	TpPoSubscribe(subscribe *entity.Subscribe) *po.Subscribe
-	ToPoSubscribes(subscribes []*entity.Subscribe) []*po.Subscribe
+	ToEntitySubscribe(subscribe *po.Subscribe) *subscribe.Subscribe
+	ToEntitySubscribes(subscribes []*po.Subscribe) []*subscribe.Subscribe
+	TpPoSubscribe(subscribe *subscribe.Subscribe) *po.Subscribe
+	ToPoSubscribes(subscribes []*subscribe.Subscribe) []*po.Subscribe
 }
 
 type SubscribeConverterImpl struct {
@@ -22,17 +22,17 @@ func NewSubscribeConverter() SubscribeConverter {
 	return &SubscribeConverterImpl{}
 }
 
-func (p *SubscribeConverterImpl) ToEntitySubscribe(subscribe *po.Subscribe) *entity.Subscribe {
-	return &entity.Subscribe{
+func (p *SubscribeConverterImpl) ToEntitySubscribe(subscribe *po.Subscribe) *subscribe.Subscribe {
+	return &subscribe.Subscribe{
 		Id:        subscribe.ID,
 		AuId:      subscribe.AuId,
 		ServiceId: subscribe.ServiceId,
 	}
 }
-func (p *SubscribeConverterImpl) ToEntitySubscribes(subscribes []*po.Subscribe) []*entity.Subscribe {
-	sublist := make([]*entity.Subscribe, len(subscribes))
+func (p *SubscribeConverterImpl) ToEntitySubscribes(subscribes []*po.Subscribe) []*subscribe.Subscribe {
+	sublist := make([]*subscribe.Subscribe, len(subscribes))
 	for i, s := range subscribes {
-		sublist[i] = &entity.Subscribe{
+		sublist[i] = &subscribe.Subscribe{
 			Id:        s.ID,
 			AuId:      s.AuId,
 			ServiceId: s.ServiceId,
@@ -40,7 +40,7 @@ func (p *SubscribeConverterImpl) ToEntitySubscribes(subscribes []*po.Subscribe) 
 	}
 	return sublist
 }
-func (p *SubscribeConverterImpl) TpPoSubscribe(subscribe *entity.Subscribe) *po.Subscribe {
+func (p *SubscribeConverterImpl) TpPoSubscribe(subscribe *subscribe.Subscribe) *po.Subscribe {
 	return &po.Subscribe{
 		Model: gorm.Model{
 			ID: subscribe.Id,
@@ -49,7 +49,7 @@ func (p *SubscribeConverterImpl) TpPoSubscribe(subscribe *entity.Subscribe) *po.
 		ServiceId: subscribe.ServiceId,
 	}
 }
-func (p *SubscribeConverterImpl) ToPoSubscribes(subscribes []*entity.Subscribe) []*po.Subscribe {
+func (p *SubscribeConverterImpl) ToPoSubscribes(subscribes []*subscribe.Subscribe) []*po.Subscribe {
 	sublist := make([]*po.Subscribe, len(subscribes))
 	for i, s := range subscribes {
 		sublist[i] = &po.Subscribe{

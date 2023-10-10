@@ -1,6 +1,4 @@
-package entity
-
-import "github.com/peifengll/task-rebot/domain/repository"
+package service
 
 type Service struct {
 	Id         uint
@@ -12,7 +10,7 @@ type Service struct {
 type ServiceAgg struct {
 	*Service
 	dict map[string]ServiceVirtual
-	Repo repository.ServiceRepo
+	Repo ServiceRepo
 }
 
 // 以代码形式存储的服务

@@ -1,16 +1,16 @@
 package converter
 
 import (
-	"github.com/peifengll/task-rebot/domain/entity"
+	"github.com/peifengll/task-rebot/domain/task"
 	"github.com/peifengll/task-rebot/infra/persistence/po"
 	"gorm.io/gorm"
 )
 
 type TaskConverter interface {
-	ToEntityTask(task *po.Task) *entity.Task
-	ToEntityTasks(tasks []*po.Task) []*entity.Task
-	ToPoTask(task *entity.Task) *po.Task
-	ToPoTasks(tasks []*entity.Task) []*po.Task
+	ToEntityTask(task *po.Task) *task.Task
+	ToEntityTasks(tasks []*po.Task) []*task.Task
+	ToPoTask(task *task.Task) *po.Task
+	ToPoTasks(tasks []*task.Task) []*po.Task
 }
 
 type TaskConverterImpl struct {
@@ -22,8 +22,8 @@ func NewTaskConverter() TaskConverter {
 
 var _ TaskConverter = &TaskConverterImpl{}
 
-func (p *TaskConverterImpl) ToEntityTask(task *po.Task) *entity.Task {
-	return &entity.Task{
+func (p *TaskConverterImpl) ToEntityTask(task *po.Task) *task.Task {
+	return &task.Task{
 		Id:          task.ID,
 		AuId:        task.AuId,
 		Name:        task.Name,
@@ -32,10 +32,10 @@ func (p *TaskConverterImpl) ToEntityTask(task *po.Task) *entity.Task {
 		Status:      task.Status,
 	}
 }
-func (p *TaskConverterImpl) ToEntityTasks(tasks []*po.Task) []*entity.Task {
-	enlistTasks := make([]*entity.Task, len(tasks))
+func (p *TaskConverterImpl) ToEntityTasks(tasks []*po.Task) []*task.Task {
+	enlistTasks := make([]*task.Task, len(tasks))
 	for i, task := range tasks {
-		enlistTasks[i] = &entity.Task{
+		enlistTasks[i] = &task.Task{
 			Id:          task.ID,
 			AuId:        task.AuId,
 			Name:        task.Name,
@@ -46,7 +46,7 @@ func (p *TaskConverterImpl) ToEntityTasks(tasks []*po.Task) []*entity.Task {
 	}
 	return enlistTasks
 }
-func (p *TaskConverterImpl) ToPoTask(task *entity.Task) *po.Task {
+func (p *TaskConverterImpl) ToPoTask(task *task.Task) *po.Task {
 	return &po.Task{
 		Model: gorm.Model{
 			ID: task.Id,
@@ -58,7 +58,7 @@ func (p *TaskConverterImpl) ToPoTask(task *entity.Task) *po.Task {
 		Status:      task.Status,
 	}
 }
-func (p *TaskConverterImpl) ToPoTasks(tasks []*entity.Task) []*po.Task {
+func (p *TaskConverterImpl) ToPoTasks(tasks []*task.Task) []*po.Task {
 	polistTasks := make([]*po.Task, len(tasks))
 	for i, task := range tasks {
 		polistTasks[i] = &po.Task{

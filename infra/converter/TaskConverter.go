@@ -22,26 +22,26 @@ func NewTaskConverter() TaskConverter {
 
 var _ TaskConverter = &TaskConverterImpl{}
 
-func (p *TaskConverterImpl) ToEntityTask(task *po.Task) *task.Task {
+func (p *TaskConverterImpl) ToEntityTask(t *po.Task) *task.Task {
 	return &task.Task{
-		Id:          task.ID,
-		AuId:        task.AuId,
-		Name:        task.Name,
-		Description: task.Description,
-		DueDate:     task.DueDate,
-		Status:      task.Status,
+		Id:          t.ID,
+		AuId:        t.AuId,
+		Name:        t.Name,
+		Description: t.Description,
+		DueDate:     t.DueDate,
+		Status:      t.Status,
 	}
 }
 func (p *TaskConverterImpl) ToEntityTasks(tasks []*po.Task) []*task.Task {
 	enlistTasks := make([]*task.Task, len(tasks))
-	for i, task := range tasks {
+	for i, t := range tasks {
 		enlistTasks[i] = &task.Task{
-			Id:          task.ID,
-			AuId:        task.AuId,
-			Name:        task.Name,
-			Description: task.Description,
-			DueDate:     task.DueDate,
-			Status:      task.Status,
+			Id:          t.ID,
+			AuId:        t.AuId,
+			Name:        t.Name,
+			Description: t.Description,
+			DueDate:     t.DueDate,
+			Status:      t.Status,
 		}
 	}
 	return enlistTasks

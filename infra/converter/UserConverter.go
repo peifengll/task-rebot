@@ -21,18 +21,18 @@ func NewUserConverter() UserConverter {
 
 var _ UserConverter = &UserConverterImpl{}
 
-func (r *UserConverterImpl) ToEntityUser(user *po.User) *user.User {
+func (r *UserConverterImpl) ToEntityUser(u *po.User) *user.User {
 	return &user.User{
-		AuId:     user.AuId,
-		UserName: user.UserName,
+		AuId:     u.AuId,
+		UserName: u.UserName,
 	}
 }
 func (r *UserConverterImpl) ToEntityUsers(users []*po.User) []*user.User {
 	list := make([]*user.User, len(users))
-	for i, user := range users {
+	for i, u := range users {
 		list[i] = &user.User{
-			AuId:     user.AuId,
-			UserName: user.UserName,
+			AuId:     u.AuId,
+			UserName: u.UserName,
 		}
 	}
 	return list

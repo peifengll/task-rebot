@@ -22,12 +22,12 @@ func NewServiceConverter() ServiceConverter {
 	return &ServiceConverterImpl{}
 }
 
-func (r *ServiceConverterImpl) ToEntityService(service *po.Service) *service.Service {
+func (r *ServiceConverterImpl) ToEntityService(s *po.Service) *service.Service {
 	aim := &service.Service{
-		Id:         service.ID,
-		Name:       service.Name,
-		ServerTime: service.ServerTime,
-		Status:     service.Status,
+		Id:         s.ID,
+		Name:       s.Name,
+		ServerTime: s.ServerTime,
+		Status:     s.Status,
 	}
 	return aim
 }

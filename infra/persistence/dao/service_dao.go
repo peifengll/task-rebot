@@ -25,19 +25,19 @@ type ServiceDao interface {
 	DeleteService(ctx context.Context, id int) error
 }
 
-func NewServiceDaoInForm(d *gorm.DB) *ServiceDaoInForm {
-	return &ServiceDaoInForm{
+func NewServiceDao(d *gorm.DB) ServiceDao {
+	return &ServiceDaoInGorm{
 		db: d,
 	}
 }
 
-type ServiceDaoInForm struct {
+type ServiceDaoInGorm struct {
 	db *gorm.DB
 }
 
-var _ ServiceDao = &ServiceDaoInForm{}
+var _ ServiceDao = &ServiceDaoInGorm{}
 
-func (r *ServiceDaoInForm) FindServiceById(ctx context.Context, id int) (*po.Service, error) {
+func (r *ServiceDaoInGorm) FindServiceById(ctx context.Context, id int) (*po.Service, error) {
 	p := &po.Service{}
 	err := r.db.Model(&po.Service{}).Where("id = ?", id).First(p).Error
 	if err != nil {
@@ -47,7 +47,7 @@ func (r *ServiceDaoInForm) FindServiceById(ctx context.Context, id int) (*po.Ser
 	return p, nil
 }
 
-func (r *ServiceDaoInForm) FindAllService(ctx context.Context) ([]*po.Service, error) {
+func (r *ServiceDaoInGorm) FindAllService(ctx context.Context) ([]*po.Service, error) {
 	plist := make([]*po.Service, 0)
 	err := r.db.Model(&po.Service{}).Find(&plist).Error
 	if err != nil {
@@ -57,7 +57,7 @@ func (r *ServiceDaoInForm) FindAllService(ctx context.Context) ([]*po.Service, e
 	return plist, nil
 }
 
-func (r *ServiceDaoInForm) FindAllServiceStatus(ctx context.Context, status int) ([]*po.Service, error) {
+func (r *ServiceDaoInGorm) FindAllServiceStatus(ctx context.Context, status int) ([]*po.Service, error) {
 	plist := make([]*po.Service, 0)
 	var err = r.db.Model(&po.Service{}).Where("status = ?", status).Find(&plist).Error
 	if err != nil {
@@ -67,7 +67,7 @@ func (r *ServiceDaoInForm) FindAllServiceStatus(ctx context.Context, status int)
 	return plist, nil
 }
 
-func (r *ServiceDaoInForm) FindServicesByServerTime(ctx context.Context, servertime string) ([]*po.Service, error) {
+func (r *ServiceDaoInGorm) FindServicesByServerTime(ctx context.Context, servertime string) ([]*po.Service, error) {
 	plist := make([]*po.Service, 0)
 	err := r.db.Model(&po.Service{}).Where("servertime = ?", servertime).Find(&plist).Error
 	if err != nil {
@@ -76,7 +76,7 @@ func (r *ServiceDaoInForm) FindServicesByServerTime(ctx context.Context, servert
 	}
 	return plist, nil
 }
-func (r *ServiceDaoInForm) CreateService(ctx context.Context, service *po.Service) error {
+func (r *ServiceDaoInGorm) CreateService(ctx context.Context, service *po.Service) error {
 	err := r.db.Create(service).Error
 	if err != nil {
 		log.Errorf("error create domain_service CreateService:%s", err)
@@ -84,7 +84,7 @@ func (r *ServiceDaoInForm) CreateService(ctx context.Context, service *po.Servic
 	}
 	return nil
 }
-func (r *ServiceDaoInForm) UpdateServiceStatus(ctx context.Context, id int, status int) error {
+func (r *ServiceDaoInGorm) UpdateServiceStatus(ctx context.Context, id int, status int) error {
 	err := r.db.Model(&po.Service{}).Where("id = ?", id).Update("status", status).Error
 	if err != nil {
 		log.Errorf("error updating domain_service status:%s", err)
@@ -92,7 +92,7 @@ func (r *ServiceDaoInForm) UpdateServiceStatus(ctx context.Context, id int, stat
 	}
 	return nil
 }
-func (r *ServiceDaoInForm) DeleteService(ctx context.Context, id int) error {
+func (r *ServiceDaoInGorm) DeleteService(ctx context.Context, id int) error {
 	err := r.db.Model(&po.Service{}).Delete(&po.Service{}, id).Error
 	if err != nil {
 		log.Errorf("error deleting domain_service:%s", err)

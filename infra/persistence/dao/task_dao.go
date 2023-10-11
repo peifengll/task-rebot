@@ -42,7 +42,7 @@ type TaskDaoInGorm struct {
 	db *gorm.DB
 }
 
-func NewTaskDao(db *gorm.DB) *TaskDaoInGorm {
+func NewTaskDao(db *gorm.DB) TaskDao {
 	return &TaskDaoInGorm{
 		db: db,
 	}

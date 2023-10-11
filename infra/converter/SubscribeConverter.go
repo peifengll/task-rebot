@@ -22,11 +22,11 @@ func NewSubscribeConverter() SubscribeConverter {
 	return &SubscribeConverterImpl{}
 }
 
-func (p *SubscribeConverterImpl) ToEntitySubscribe(subscribe *po.Subscribe) *subscribe.Subscribe {
+func (p *SubscribeConverterImpl) ToEntitySubscribe(s *po.Subscribe) *subscribe.Subscribe {
 	return &subscribe.Subscribe{
-		Id:        subscribe.ID,
-		AuId:      subscribe.AuId,
-		ServiceId: subscribe.ServiceId,
+		Id:        s.ID,
+		AuId:      s.AuId,
+		ServiceId: s.ServiceId,
 	}
 }
 func (p *SubscribeConverterImpl) ToEntitySubscribes(subscribes []*po.Subscribe) []*subscribe.Subscribe {

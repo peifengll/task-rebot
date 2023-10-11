@@ -13,9 +13,9 @@ type ServiceRepoImpl struct {
 	Convert converter.ServiceConverter
 }
 
-var _ sevicee.ServiceRepo = &ServiceRepoImpl{}
+var _ service.ServiceRepo = &ServiceRepoImpl{}
 
-func NewServiceRepo(dao dao.ServiceDao, convert converter.ServiceConverter) sevicee.ServiceRepo {
+func NewServiceRepo(dao dao.ServiceDao, convert converter.ServiceConverter) service.ServiceRepo {
 	return &ServiceRepoImpl{
 		Dao:     dao,
 		Convert: convert,

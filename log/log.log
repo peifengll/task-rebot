@@ -1,0 +1,9 @@
+2023-10-11 17:34:29 [INF] config.go:58 | 数据库连接配置正常
+2023-10-11 17:34:29 [INF] Mysql_Provider.go:25 | gorm dsn: root:123456@tcp(118.25.23.154:8086)/taskrebot?charset=utf8&parseTime=True&loc=Local&timeout=10s
+2023-10-11 17:34:31 [INF] bot.go:88 | 登录成功,当前机器人为 <Self:回水>
+2023-10-11 17:36:37 [INF] config.go:58 | 数据库连接配置正常
+2023-10-11 17:36:37 [INF] Mysql_Provider.go:25 | gorm dsn: root:123456@tcp(118.25.23.154:8086)/taskrebot?charset=utf8&parseTime=True&loc=Local&timeout=10s
+2023-10-11 17:36:59 [ERR] bot.go:80 | 机器人登录失败 login forbidden
+2023-10-11 17:40:28 [INF] config.go:58 | 数据库连接配置正常
+2023-10-11 17:40:28 [INF] Mysql_Provider.go:25 | gorm dsn: root:123456@tcp(118.25.23.154:8086)/taskrebot?charset=utf8&parseTime=True&loc=Local&timeout=10s
+2023-10-11 17:40:51 [INF] bot.go:89 | 登录成功,当前机器人为 <Self:回水>

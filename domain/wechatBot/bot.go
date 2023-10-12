@@ -1,11 +1,8 @@
 package wechatBot
 
 import (
-	"context"
-	"fmt"
 	log "github.com/cihub/seelog"
 	"github.com/eatmoreapple/openwechat"
-	"github.com/peifengll/task-rebot/app"
 )
 
 type WechatBot struct {
@@ -41,29 +38,10 @@ func (b *WechatBot) GiveMessageToOne(one *openwechat.Friend, message string) err
 	return nil
 }
 
+// 注册消息处理逻辑
 func (b *WechatBot) SetMessageSolveLogic() {
 	b.Bot.MessageHandler = func(msg *openwechat.Message) {
-		ctx := context.Background()
-		// 如果是新申请的好友
-		if msg.IsFriendAdd() {
-			friend, err := msg.Agree()
-			if err != nil {
-				log.Errorf("error agreeing friend: %v", err)
-			}
-			id, err := app.UserRepo.GetNewAuId(ctx)
-			if err != nil {
-				log.Errorf("error getting new au id: %v", err)
-				return
-			}
-			err = friend.SetRemarkName(fmt.Sprintf("user_%d", id))
-			friend.SendText(" 你好呀,你的备注是" + fmt.Sprintf("user_%d", id))
-			if err != nil {
-				log.Errorf("error setting new au name: %v", err)
-				return
-			}
-		}
-		// 最后一定点一个已读
-		msg.AsRead()
+		HandleMsg(msg)
 	}
 }
 

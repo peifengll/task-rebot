@@ -7,3 +7,26 @@
 2023-10-11 17:40:28 [INF] config.go:58 | 数据库连接配置正常
 2023-10-11 17:40:28 [INF] Mysql_Provider.go:25 | gorm dsn: root:123456@tcp(118.25.23.154:8086)/taskrebot?charset=utf8&parseTime=True&loc=Local&timeout=10s
 2023-10-11 17:40:51 [INF] bot.go:89 | 登录成功,当前机器人为 <Self:回水>
+2023-10-12 09:42:57 [INF] config.go:58 | 数据库连接配置正常
+2023-10-12 09:42:57 [INF] Mysql_Provider.go:25 | gorm dsn: root:123456@tcp(118.25.23.154:8086)/taskrebot?charset=utf8&parseTime=True&loc=Local&timeout=10s
+2023-10-12 09:43:20 [INF] bot.go:91 | 登录成功,当前机器人为 <Self:回水>
+2023-10-12 09:43:52 [INF] bot.go:59 | 原本备注为: <Friend:逍遥游>
+2023-10-12 09:43:52 [INF] bot.go:61 | 现在备注为: <Friend:user_11>
+2023-10-12 09:45:56 [INF] config.go:58 | 数据库连接配置正常
+2023-10-12 09:45:56 [INF] Mysql_Provider.go:25 | gorm dsn: root:123456@tcp(118.25.23.154:8086)/taskrebot?charset=utf8&parseTime=True&loc=Local&timeout=10s
+2023-10-12 09:45:58 [INF] bot.go:93 | 登录成功,当前机器人为 <Self:回水>
+2023-10-12 09:46:06 [INF] bot.go:59 | 原本备注为: <Friend:逍遥游>
+2023-10-12 09:46:06 [INF] bot.go:61 | 现在备注为: <Friend:user_11>
+2023-10-12 09:46:06 [INF] bot.go:62 | friend.Uin %!s(int64=0)
+2023-10-12 09:46:06 [INF] bot.go:63 | friend.OwnerUin %!s(int=0)
+2023-10-12 09:47:37 [INF] config.go:58 | 数据库连接配置正常
+2023-10-12 09:47:37 [INF] Mysql_Provider.go:25 | gorm dsn: root:123456@tcp(118.25.23.154:8086)/taskrebot?charset=utf8&parseTime=True&loc=Local&timeout=10s
+2023-10-12 09:47:39 [INF] bot.go:93 | 登录成功,当前机器人为 <Self:回水>
+2023-10-12 09:47:47 [INF] bot.go:59 | 原本备注为: <Friend:逍遥游>
+2023-10-12 09:47:47 [INF] bot.go:61 | 现在备注为: <Friend:user_11>
+2023-10-12 09:47:47 [INF] bot.go:62 | friend.Uin 0
+2023-10-12 09:47:47 [INF] bot.go:63 | friend.OwnerUin 0
+2023-10-12 09:47:52 [INF] bot.go:59 | 原本备注为: <Friend:逍遥游>
+2023-10-12 09:47:52 [INF] bot.go:61 | 现在备注为: <Friend:user_11>
+2023-10-12 09:47:52 [INF] bot.go:62 | friend.Uin 0
+2023-10-12 09:47:52 [INF] bot.go:63 | friend.OwnerUin 0

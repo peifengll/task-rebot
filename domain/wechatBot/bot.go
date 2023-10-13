@@ -24,11 +24,13 @@ func (b *WechatBot) GetAllFriends() (openwechat.Friends, error) {
 	return friends, nil
 }
 
+// 这个auid就是image 生成的id
 func (b *WechatBot) GetFriendByAuId(id string) (*openwechat.Friend, error) {
 	Friends, _ := b.GetAllFriends()
 	one := Friends.GetByRemarkName(id)
 	return one, nil
 }
+
 func (b *WechatBot) GiveMessageToOne(one *openwechat.Friend, message string) error {
 	_, err := one.SendText(message)
 	if err != nil {
@@ -43,6 +45,7 @@ func (b *WechatBot) SetMessageSolveLogic() {
 	b.Bot.MessageHandler = func(msg *openwechat.Message) {
 		HandleMsg(msg)
 	}
+
 }
 
 // 初始化一个机器人
@@ -53,6 +56,10 @@ func NewWechatBot() *WechatBot {
 	// 创建热存储容器对象
 	reloadStorage := openwechat.NewFileHotReloadStorage("storage.json")
 	defer reloadStorage.Close()
+	//bot.MessageHandler = func(msg *openwechat.Message) {
+	//	log.Debugf("？？？？、")
+	//	HandleMsg(msg)
+	//}
 	err := bot.HotLogin(reloadStorage, openwechat.NewRetryLoginOption())
 	if err != nil {
 		log.Errorf("机器人登录失败 %s", err)

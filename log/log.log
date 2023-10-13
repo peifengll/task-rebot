@@ -30,3 +30,92 @@
 2023-10-12 09:47:52 [INF] bot.go:61 | 现在备注为: <Friend:user_11>
 2023-10-12 09:47:52 [INF] bot.go:62 | friend.Uin 0
 2023-10-12 09:47:52 [INF] bot.go:63 | friend.OwnerUin 0
+2023-10-13 08:57:31 [INF] config.go:58 | 数据库连接配置正常
+2023-10-13 08:57:31 [INF] Mysql_Provider.go:25 | gorm dsn: root:123456@tcp(118.25.23.154:8086)/taskrebot?charset=utf8&parseTime=True&loc=Local&timeout=10s
+2023-10-13 08:57:51 [INF] bot.go:67 | 登录成功,当前机器人为 <Self:逍遥游>
+2023-10-13 14:55:54 [INF] config.go:58 | 数据库连接配置正常
+2023-10-13 14:55:54 [INF] Mysql_Provider.go:25 | gorm dsn: root:123456@tcp(118.25.23.154:8086)/taskrebot?charset=utf8&parseTime=True&loc=Local&timeout=10s
+2023-10-13 14:56:14 [INF] bot.go:69 | 登录成功,当前机器人为 <Self:逍遥游>
+2023-10-13 14:58:58 [INF] config.go:58 | 数据库连接配置正常
+2023-10-13 14:58:58 [INF] Mysql_Provider.go:25 | gorm dsn: root:123456@tcp(118.25.23.154:8086)/taskrebot?charset=utf8&parseTime=True&loc=Local&timeout=10s
+2023-10-13 14:58:59 [INF] bot.go:69 | 登录成功,当前机器人为 <Self:逍遥游>
+2023-10-13 14:59:30 [INF] config.go:58 | 数据库连接配置正常
+2023-10-13 14:59:30 [INF] Mysql_Provider.go:25 | gorm dsn: root:123456@tcp(118.25.23.154:8086)/taskrebot?charset=utf8&parseTime=True&loc=Local&timeout=10s
+2023-10-13 14:59:31 [INF] bot.go:69 | 登录成功,当前机器人为 <Self:逍遥游>
+2023-10-13 15:00:27 [INF] config.go:58 | 数据库连接配置正常
+2023-10-13 15:00:27 [INF] Mysql_Provider.go:25 | gorm dsn: root:123456@tcp(118.25.23.154:8086)/taskrebot?charset=utf8&parseTime=True&loc=Local&timeout=10s
+2023-10-13 15:00:28 [INF] bot.go:69 | 登录成功,当前机器人为 <Self:逍遥游>
+2023-10-13 15:01:49 [INF] config.go:58 | 数据库连接配置正常
+2023-10-13 15:01:49 [INF] Mysql_Provider.go:25 | gorm dsn: root:123456@tcp(118.25.23.154:8086)/taskrebot?charset=utf8&parseTime=True&loc=Local&timeout=10s
+2023-10-13 15:01:49 [INF] bot.go:69 | 登录成功,当前机器人为 <Self:逍遥游>
+2023-10-13 15:02:29 [INF] config.go:58 | 数据库连接配置正常
+2023-10-13 15:02:29 [INF] Mysql_Provider.go:25 | gorm dsn: root:123456@tcp(118.25.23.154:8086)/taskrebot?charset=utf8&parseTime=True&loc=Local&timeout=10s
+2023-10-13 15:02:30 [INF] bot.go:69 | 登录成功,当前机器人为 <Self:逍遥游>
+2023-10-13 15:04:28 [INF] config.go:58 | 数据库连接配置正常
+2023-10-13 15:04:28 [INF] Mysql_Provider.go:25 | gorm dsn: root:123456@tcp(118.25.23.154:8086)/taskrebot?charset=utf8&parseTime=True&loc=Local&timeout=10s
+2023-10-13 15:04:29 [INF] bot.go:70 | 登录成功,当前机器人为 <Self:逍遥游>
+2023-10-13 15:05:47 [INF] config.go:58 | 数据库连接配置正常
+2023-10-13 15:05:47 [INF] Mysql_Provider.go:25 | gorm dsn: root:123456@tcp(118.25.23.154:8086)/taskrebot?charset=utf8&parseTime=True&loc=Local&timeout=10s
+2023-10-13 15:05:48 [INF] bot.go:71 | 登录成功,当前机器人为 <Self:逍遥游>
+2023-10-13 15:11:47 [INF] config.go:58 | 数据库连接配置正常
+2023-10-13 15:11:47 [INF] Mysql_Provider.go:25 | gorm dsn: root:123456@tcp(118.25.23.154:8086)/taskrebot?charset=utf8&parseTime=True&loc=Local&timeout=10s
+2023-10-13 15:11:47 [INF] bot.go:75 | 登录成功,当前机器人为 <Self:逍遥游>
+2023-10-13 15:35:57 [INF] config.go:58 | 数据库连接配置正常
+2023-10-13 15:36:27 [INF] bot.go:75 | 登录成功,当前机器人为 <Self:回水>
+2023-10-13 15:36:39 [DBG] bot.go:47 | ？？？？、
+2023-10-13 15:36:39 [ERR] message.go:213 | 外边执行了吗
+2023-10-13 15:36:39 [DBG] bot.go:47 | ？？？？、
+2023-10-13 15:36:39 [ERR] message.go:213 | 外边执行了吗
+2023-10-13 15:36:39 [DBG] bot.go:47 | ？？？？、
+2023-10-13 15:36:41 [ERR] message.go:213 | 外边执行了吗
+2023-10-13 15:36:41 [ERR] msg.go:43 | 执行了吗
+2023-10-13 15:36:41 [INF] msg.go:104 | msg.IsText excute?
+2023-10-13 15:36:46 [DBG] bot.go:47 | ？？？？、
+2023-10-13 15:36:46 [ERR] message.go:213 | 外边执行了吗
+2023-10-13 15:36:46 [ERR] msg.go:43 | 执行了吗
+2023-10-13 15:36:47 [INF] msg.go:104 | msg.IsText excute?
+2023-10-13 15:36:55 [DBG] bot.go:47 | ？？？？、
+2023-10-13 15:36:55 [ERR] message.go:213 | 外边执行了吗
+2023-10-13 15:36:55 [ERR] msg.go:43 | 执行了吗
+2023-10-13 15:36:55 [INF] msg.go:104 | msg.IsText excute?
+2023-10-13 15:37:04 [DBG] bot.go:47 | ？？？？、
+2023-10-13 15:37:04 [ERR] message.go:213 | 外边执行了吗
+2023-10-13 15:37:04 [ERR] msg.go:43 | 执行了吗
+2023-10-13 15:37:04 [INF] msg.go:104 | msg.IsText excute?
+2023-10-13 15:37:07 [DBG] bot.go:47 | ？？？？、
+2023-10-13 15:37:07 [ERR] message.go:213 | 外边执行了吗
+2023-10-13 15:37:07 [ERR] msg.go:43 | 执行了吗
+2023-10-13 15:37:25 [DBG] bot.go:47 | ？？？？、
+2023-10-13 15:37:25 [ERR] message.go:213 | 外边执行了吗
+2023-10-13 15:37:25 [ERR] msg.go:43 | 执行了吗
+2023-10-13 15:37:25 [INF] msg.go:104 | msg.IsText excute?
+2023-10-13 15:37:50 [INF] config.go:58 | 数据库连接配置正常
+2023-10-13 15:38:10 [INF] bot.go:75 | 登录成功,当前机器人为 <Self:逍遥游>
+2023-10-13 15:38:10 [DBG] bot.go:47 | ？？？？、
+2023-10-13 15:38:10 [ERR] message.go:213 | 外边执行了吗
+2023-10-13 15:38:11 [DBG] bot.go:47 | ？？？？、
+2023-10-13 15:38:11 [ERR] message.go:213 | 外边执行了吗
+2023-10-13 15:38:13 [DBG] bot.go:47 | ？？？？、
+2023-10-13 15:38:13 [ERR] message.go:213 | 外边执行了吗
+2023-10-13 15:38:37 [DBG] bot.go:47 | ？？？？、
+2023-10-13 15:38:38 [ERR] message.go:213 | 外边执行了吗
+2023-10-13 15:38:38 [ERR] msg.go:43 | 执行了吗
+2023-10-13 15:38:38 [INF] msg.go:104 | msg.IsText excute?
+2023-10-13 15:38:45 [DBG] bot.go:47 | ？？？？、
+2023-10-13 15:38:45 [ERR] message.go:213 | 外边执行了吗
+2023-10-13 15:38:45 [ERR] msg.go:43 | 执行了吗
+2023-10-13 15:39:49 [INF] config.go:58 | 数据库连接配置正常
+2023-10-13 15:39:50 [INF] bot.go:74 | 登录成功,当前机器人为 <Self:逍遥游>
+2023-10-13 15:39:51 [ERR] message.go:213 | 外边执行了吗
+2023-10-13 15:39:51 [ERR] message.go:213 | 外边执行了吗
+2023-10-13 15:39:51 [ERR] message.go:213 | 外边执行了吗
+2023-10-13 15:39:51 [ERR] message.go:213 | 外边执行了吗
+2023-10-13 15:39:51 [ERR] msg.go:43 | 执行了吗
+2023-10-13 15:39:52 [INF] msg.go:104 | msg.IsText excute?
+2023-10-13 15:39:52 [ERR] message.go:213 | 外边执行了吗
+2023-10-13 15:39:52 [ERR] msg.go:43 | 执行了吗
+2023-10-13 15:40:09 [ERR] message.go:213 | 外边执行了吗
+2023-10-13 15:40:09 [ERR] msg.go:43 | 执行了吗
+2023-10-13 15:40:10 [ERR] message.go:213 | 外边执行了吗
+2023-10-13 16:18:44 [INF] config.go:58 | 数据库连接配置正常
+2023-10-13 16:18:58 [INF] bot.go:74 | 登录成功,当前机器人为 <Self:逍遥游>

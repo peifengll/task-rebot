@@ -21,7 +21,7 @@ func ProviderDsn(config config.MySQLConfig) string {
 		config.Port,
 		config.DbName,
 	)
-	log.Infof("gorm dsn: %s", dsn)
+	//log.Infof("gorm dsn: %s", dsn)
 	return dsn
 }
 

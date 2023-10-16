@@ -1,4 +1,4 @@
-package main
+package test
 
 import (
 	"fmt"
@@ -16,6 +16,7 @@ func main() {
 	reloadStorage := openwechat.NewFileHotReloadStorage("storage.json")
 	defer reloadStorage.Close()
 	err := bot.HotLogin(reloadStorage, openwechat.NewRetryLoginOption())
+	//err := bot.Login()
 	if err != nil {
 		fmt.Println("登录失败: ", err)
 		return
@@ -27,8 +28,8 @@ func main() {
 	}
 	fmt.Println(self)
 	//查询公众号
-	//mps, err := self.Mps() // self.Mps(true)
-	//fmt.Printf("%+v", mps)
+	mps, err := self.Friends() // self.Mps(true)
+	fmt.Printf("%+v", mps)
 	// 找到一个好友
 	fs, err := self.Friends()
 	results := fs.SearchByRemarkName(1, "刘俊杰")
